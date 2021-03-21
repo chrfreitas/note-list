@@ -6,6 +6,7 @@ function Main() {
     <Container>
       Chris
       <small>Freitas</small>
+      <br />
     </Container>
   );
 }
