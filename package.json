@@ -27,7 +27,14 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+			"max-lines": [ "error", { "max": 120 } ],
+			"max-lines-per-function": [ "error", { "max": 30 }],
+			"max-params": [ "error", { "max": 2 }],
+			"complexity": [ "error", 5 ],
+			"no-else-return": ["error", { "allowElseIf": false }]
+		}
   },
   "browserslist": {
     "production": [
