@@ -34,9 +34,3 @@ export const Date = styled.div`
   color: ${colors.darkGray};
   margin: 0 0 6px 0;
 `;
-
-export const Tags = styled.div`
-  font-size: 10px;
-  line-height: 14px;
-  color: ${colors.black};
-`;
