@@ -18,7 +18,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    //TODO: check if there's other possibility to access prop by string object[prop]
+    "suppressImplicitAnyIndexErrors": true,
   },
   "include": [
     "src"
