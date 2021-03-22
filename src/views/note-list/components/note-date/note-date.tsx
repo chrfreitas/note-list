@@ -1,13 +1,14 @@
 import React from 'react';
+import DateService from '../../../../services/date/date.service';
 
-import { Container } from './note-tag.styles';
+import { Container } from './note-date.styles';
 
 interface INoteDateProps {
   date: Date;
 }
 
 const NoteDate = ({ date }: INoteDateProps) => (
-  <Container>{date.getDate()}</Container>
+  <Container>{DateService.convertToTimeline(date)}</Container>
 );
 
 export default NoteDate;
