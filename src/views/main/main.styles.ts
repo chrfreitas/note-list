@@ -2,5 +2,5 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   height: 100vh;
-  background: red;
+  font-family: 'Lato', sans-serif;
 `;

@@ -1,8 +1,11 @@
 import React from 'react';
+import Header from '../../components/header/header';
 import { Container } from './main.styles';
 
-function Main() {
-  return <Container>Chris</Container>;
-}
+const Main = () => (
+  <Container>
+    <Header />
+  </Container>
+);
 
 export default Main;
