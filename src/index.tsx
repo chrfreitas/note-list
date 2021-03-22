@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Main from './views/main/main';
+
+import NoteList from './views/note-list/note-list';
 import reportWebVitals from './reportWebVitals';
+
 import './styles/reset.css';
 import './styles/base.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Main />
+    <NoteList />
   </React.StrictMode>,
   document.getElementById('root')
 );
