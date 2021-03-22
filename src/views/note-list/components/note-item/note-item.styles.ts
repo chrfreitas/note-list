@@ -27,10 +27,3 @@ export const Subtitle = styled.div`
   color: ${colors.black};
   margin: 0 0 4px 0;
 `;
-
-export const Date = styled.div`
-  font-size: 10px;
-  line-height: 14px;
-  color: ${colors.darkGray};
-  margin: 0 0 6px 0;
-`;

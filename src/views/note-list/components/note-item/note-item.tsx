@@ -2,8 +2,9 @@ import React from 'react';
 import Icon from '../../../../components/icon/icon';
 import { colors } from '../../../../styles/colors';
 
-import { Container, Title, Subtitle, Date, Infos } from './note-item.styles';
 import NoteTags from '../note-tags/note-tags';
+import NoteDate from '../note-date/note-date';
+import { Container, Title, Subtitle, Infos } from './note-item.styles';
 
 interface INoteItem {
   title: string;
@@ -18,7 +19,7 @@ const NoteItem = ({ title, subtitle, date, tags }: INoteItem) => (
     <Infos>
       <Title>{title}</Title>
       <Subtitle>{subtitle}</Subtitle>
-      <Date>{date.getDate()}</Date>
+      <NoteDate date={date} />
       {tags.length && <NoteTags tags={tags} />}
     </Infos>
   </Container>
