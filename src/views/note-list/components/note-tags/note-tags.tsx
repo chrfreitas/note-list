@@ -1,5 +1,5 @@
 import React from 'react';
-import { capitalize } from '../../../../utils/utils';
+import { capitalize } from '../../../../services/utils/utils';
 
 import { Container, Tag } from './note-tags.styles';
 

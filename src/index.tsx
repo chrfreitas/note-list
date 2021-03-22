@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import NoteList from './views/note-list/note-list';
+import NoteList from './containers/note-list/note-list';
 import reportWebVitals from './reportWebVitals';
 
 import './styles/reset.css';

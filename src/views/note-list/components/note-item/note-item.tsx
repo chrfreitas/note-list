@@ -6,14 +6,14 @@ import NoteTags from '../note-tags/note-tags';
 import NoteDate from '../note-date/note-date';
 import { Container, Title, Subtitle, Infos } from './note-item.styles';
 
-interface INoteItem {
+export interface INoteItemProps {
   title: string;
   subtitle: String;
   date: Date;
   tags: string[];
 }
 
-const NoteItem = ({ title, subtitle, date, tags }: INoteItem) => (
+const NoteItem = ({ title, subtitle, date, tags }: INoteItemProps) => (
   <Container>
     <Icon type="text-rich" width={12} height={10} color={colors.blue} />
     <Infos>
