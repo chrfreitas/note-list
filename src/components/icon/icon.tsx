@@ -3,6 +3,7 @@ import React from 'react';
 import { Container } from './icon.styles';
 import { ReactComponent as Plus } from '../../assets/icons/plus.svg';
 import { ReactComponent as SortDescending } from '../../assets/icons/sort-descending.svg';
+import { ReactComponent as SortAscending } from '../../assets/icons/sort-ascending.svg';
 import { ReactComponent as TextRich } from '../../assets/icons/text-rich.svg';
 import { ReactComponent as CodeTag } from '../../assets/icons/code-tag.svg';
 import { ReactComponent as TextParagraph } from '../../assets/icons/text-paragraph.svg';
@@ -32,6 +33,8 @@ const generateSvg = (type: string) => {
       return <Plus />;
     case 'sort-descending':
       return <SortDescending />;
+    case 'sort-ascending':
+      return <SortAscending />;
     case 'text-rich':
       return <TextRich />;
     case 'code-tag':

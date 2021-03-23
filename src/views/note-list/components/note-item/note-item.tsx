@@ -14,7 +14,7 @@ const NoteItem = ({
   subtitle,
   date,
   tags,
-  status,
+  status
 }: INoteDataSource) => (
   <Container>
     <NoteIcon type={type} />
