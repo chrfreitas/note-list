@@ -19,7 +19,7 @@ const generateFakeNote = (): INoteDataSource => ({
     'text-rich',
     'text',
     'code',
-    'spreadcheet',
+    'spreadsheet',
     'timer',
   ]),
 });

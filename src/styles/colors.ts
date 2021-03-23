@@ -3,5 +3,8 @@ export const colors = {
   darkGray: '#515357',
   gray: '#DFE1E4',
   blue: '#086DD6',
+  purple: '#7049CF',
+  green: '#1AA772',
+  orange: '#F28C52',
   white: '#FFFFFF',
 };

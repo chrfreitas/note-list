@@ -9,7 +9,7 @@ import { ReactComponent as TextParagraph } from '../../assets/icons/text-paragra
 import { ReactComponent as Spreadsheet } from '../../assets/icons/spreadsheet.svg';
 import { ReactComponent as Timer } from '../../assets/icons/timer.svg';
 
-export interface IProps {
+export interface IIconProps {
   type:
     | 'plus'
     | 'sort-descending'
@@ -17,7 +17,8 @@ export interface IProps {
     | 'code-tag'
     | 'text-paragraph'
     | 'spreadsheet'
-    | 'timer';
+    | 'timer'
+    | string;
   color: string;
   width: number;
   height: number;
@@ -45,7 +46,7 @@ const generateSvg = (type: string) => {
   }
 };
 
-const Icon = ({ type, color, width, height }: IProps) => (
+const Icon = ({ type, color, width, height }: IIconProps) => (
   <Container color={color} width={width} height={height}>
     {generateSvg(type)}
   </Container>

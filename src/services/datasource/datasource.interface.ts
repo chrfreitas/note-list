@@ -1,11 +1,19 @@
+type INoteStatusDataSource = 'blocked' | 'pending' | 'done';
+type INoteTypeDataSource =
+  | 'text-rich'
+  | 'text'
+  | 'code'
+  | 'spreadsheet'
+  | 'timer';
+
 export interface INoteDataSource {
   id: string;
   title: string;
   subtitle: string;
   date: Date;
   tags: string[];
-  status: 'blocked' | 'pending' | 'done';
-  type: 'text-rich' | 'text' | 'code' | 'spreadcheet' | 'timer';
+  status: INoteStatusDataSource;
+  type: INoteTypeDataSource;
 }
 
 export interface IDataSource {

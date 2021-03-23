@@ -1,21 +1,14 @@
 import React from 'react';
-import Icon from '../../../../components/icon/icon';
-import { colors } from '../../../../styles/colors';
 
+import { INoteDataSource } from '../../../../services/datasource/datasource.interface';
 import NoteTags from '../note-tags/note-tags';
 import NoteDate from '../note-date/note-date';
+import NoteIcon from '../note-icon/note-icon';
 import { Container, Title, Subtitle, Infos } from './note-item.styles';
 
-export interface INoteItemProps {
-  title: string;
-  subtitle: String;
-  date: Date;
-  tags: string[];
-}
-
-const NoteItem = ({ title, subtitle, date, tags }: INoteItemProps) => (
+const NoteItem = ({ type, title, subtitle, date, tags }: INoteDataSource) => (
   <Container>
-    <Icon type="text-rich" width={12} height={10} color={colors.blue} />
+    <NoteIcon type={type} />
     <Infos>
       <Title>{title}</Title>
       <Subtitle>{subtitle}</Subtitle>
