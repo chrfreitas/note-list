@@ -33,7 +33,7 @@ const isYesterday = (date: Date): boolean => {
 const DateService = {
   convertToTimeline,
   isToday,
-  isYesterday,
+  isYesterday
 };
 
 export default DateService;

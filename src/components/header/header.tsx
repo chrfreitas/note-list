@@ -1,16 +1,24 @@
 import React from 'react';
+import { OrderType } from '../../services/utils/utils';
 
 import { colors } from '../../styles/colors';
 import Icon from '../icon/icon';
 import { AddIcon, Container, Title, SortIcon } from './header.styles';
 
-const Header = () => (
+interface IHeaderProps {
+  order: OrderType;
+  toggleOrder: () => void;
+}
+
+const Header = ({ order, toggleOrder }: IHeaderProps) => (
   <Container>
     <Title>Notes</Title>
 
-    <SortIcon>
+    <SortIcon onClick={toggleOrder}>
       <Icon
-        type="sort-descending"
+        type={
+          order === OrderType.descending ? 'sort-descending' : 'sort-ascending'
+        }
         color={colors.darkGray}
         width={18}
         height={14}

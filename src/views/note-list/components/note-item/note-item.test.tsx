@@ -13,7 +13,7 @@ describe('Note Item Component', () => {
       subtitle: faker.random.words(),
       date: faker.date.past(),
       tags: [],
-      status: 'blocked',
+      status: 'blocked'
     };
 
     render(<NoteItem {...note} />);
@@ -29,7 +29,7 @@ describe('Note Item Component', () => {
       subtitle: faker.random.words(),
       date: faker.date.past(),
       tags: [],
-      status: 'pending',
+      status: 'pending'
     };
 
     render(<NoteItem {...note} />);
