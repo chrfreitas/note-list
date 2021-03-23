@@ -7,10 +7,6 @@ export interface StyledProps {
 }
 
 export const Container = styled.div<StyledProps>`
-  display: inline-block;
-  width: ${(props) => `${props.width}px`};
-  height: ${(props) => `${props.height}px`};
-
   svg {
     fill: ${(props) => props.color};
     width: ${(props) => `${props.width}px`};

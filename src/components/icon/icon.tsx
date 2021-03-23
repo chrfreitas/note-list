@@ -8,6 +8,7 @@ import { ReactComponent as CodeTag } from '../../assets/icons/code-tag.svg';
 import { ReactComponent as TextParagraph } from '../../assets/icons/text-paragraph.svg';
 import { ReactComponent as Spreadsheet } from '../../assets/icons/spreadsheet.svg';
 import { ReactComponent as Timer } from '../../assets/icons/timer.svg';
+import { ReactComponent as Locker } from '../../assets/icons/locker.svg';
 
 export interface IIconProps {
   type:
@@ -41,6 +42,8 @@ const generateSvg = (type: string) => {
       return <Spreadsheet />;
     case 'timer':
       return <Timer />;
+    case 'locker':
+      return <Locker />;
     default:
       return null;
   }
