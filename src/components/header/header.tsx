@@ -7,10 +7,11 @@ import { AddIcon, Container, Title, SortIcon } from './header.styles';
 
 interface IHeaderProps {
   order: OrderType;
+  add: () => void;
   toggleOrder: () => void;
 }
 
-const Header = ({ order, toggleOrder }: IHeaderProps) => (
+const Header = ({ order, add, toggleOrder }: IHeaderProps) => (
   <Container>
     <Title>Notes</Title>
 
@@ -25,7 +26,7 @@ const Header = ({ order, toggleOrder }: IHeaderProps) => (
       />
     </SortIcon>
 
-    <AddIcon>
+    <AddIcon onClick={add}>
       <Icon type="plus" color={colors.gray} width={14} height={14} />
     </AddIcon>
   </Container>

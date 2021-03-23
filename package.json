@@ -1,8 +1,8 @@
 {
   "name": "note-list",
+  "homepage": "https://chrfreitas.github.io/note-list",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://chrfreitas.github.io/note-list",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

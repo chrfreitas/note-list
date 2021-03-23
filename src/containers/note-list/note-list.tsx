@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import DataSource from '../../services/datasource/datasource';
+import DataSource, {
+  generateFakeNote
+} from '../../services/datasource/datasource';
 import { INoteDataSource } from '../../services/datasource/datasource.interface';
 import { orderByDate, OrderType } from '../../services/utils/utils';
 import { NoteList as NoteListView } from '../../views/note-list/note-list';
@@ -12,7 +14,7 @@ const NoteList = () => {
 
   const data = DataSource.getNotes();
 
-  const toggleOrder = () => {
+  const toggleOrder = (): void => {
     if (order === OrderType.ascending) {
       return setOrder(OrderType.descending);
     }
@@ -20,12 +22,25 @@ const NoteList = () => {
     return setOrder(OrderType.ascending);
   };
 
+  const add = (): void => {
+    const note = generateFakeNote();
+    setNotes((prev) => [note, ...prev]);
+  };
+
   useEffect(() => {
     const orderedNotes = orderByDate<INoteDataSource>(data, order);
     setNotes(orderedNotes);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [order]);
 
-  return <NoteListView notes={notes} order={order} toggleOrder={toggleOrder} />;
+  return (
+    <NoteListView
+      add={add}
+      notes={notes}
+      order={order}
+      toggleOrder={toggleOrder}
+    />
+  );
 };
 
 export default NoteList;
