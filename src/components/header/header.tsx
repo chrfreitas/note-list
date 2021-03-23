@@ -17,7 +17,7 @@ const Header = ({ order, toggleOrder }: IHeaderProps) => (
     <SortIcon onClick={toggleOrder}>
       <Icon
         type={
-          order === OrderType.descending ? 'sort-ascending' : 'sort-descending'
+          order === OrderType.descending ? 'sort-descending' : 'sort-ascending'
         }
         color={colors.darkGray}
         width={18}
