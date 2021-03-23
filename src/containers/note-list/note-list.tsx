@@ -30,6 +30,7 @@ const NoteList = () => {
   useEffect(() => {
     const orderedNotes = orderByDate<INoteDataSource>(data, order);
     setNotes(orderedNotes);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [order]);
 
   return (
