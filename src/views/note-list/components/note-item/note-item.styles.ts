@@ -13,12 +13,18 @@ export const Infos = styled.div`
   padding: 0 14px 16px 0;
 `;
 
+export const Header = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0 0 2px 0;
+`;
+
 export const Title = styled.div`
+  flex: 1;
   font-size: 14px;
   font-weight: bold;
   line-height: 18px;
   color: ${colors.black};
-  margin: 0 0 2px 0;
 `;
 
 export const Subtitle = styled.div`
