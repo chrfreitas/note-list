@@ -19,7 +19,7 @@ const NoteItem = ({
   status,
   selected,
   select,
-  clearAllSelects
+  clear
 }: INoteItemProps) => {
   const onClick = (e: MouseEvent, noteId: string): void => {
     if (e.ctrlKey || e.metaKey) {
@@ -27,7 +27,7 @@ const NoteItem = ({
       return;
     }
 
-    clearAllSelects();
+    clear();
   };
 
   return (

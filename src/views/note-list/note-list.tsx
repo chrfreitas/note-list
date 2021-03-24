@@ -9,27 +9,22 @@ import { INoteListProps } from './note-list.interfaces';
 export const NoteList = ({
   notes,
   order,
-  selectedNotes,
+  numberOfSelected,
   add,
   select,
-  clearAllSelects,
+  clear,
   toggleOrder
 }: INoteListProps) =>
   notes.length ? (
     <Container>
       <Header
         order={order}
-        selectedNotes={selectedNotes}
+        numberOfSelected={numberOfSelected}
         add={add}
         toggleOrder={toggleOrder}
       />
       {notes.map((note) => (
-        <NoteItem
-          key={note.id}
-          select={select}
-          clearAllSelects={clearAllSelects}
-          {...note}
-        />
+        <NoteItem key={note.id} select={select} clear={clear} {...note} />
       ))}
     </Container>
   ) : (
