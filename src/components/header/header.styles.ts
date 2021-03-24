@@ -27,6 +27,10 @@ export const AddIcon = styled.div`
   width: 32px;
   height: 32px;
   cursor: pointer;
+
+  svg {
+    display: block;
+  }
 `;
 
 export const SortIcon = styled.div`
@@ -39,4 +43,8 @@ export const SortIcon = styled.div`
   width: 32px;
   height: 32px;
   cursor: pointer;
+
+  svg {
+    display: block;
+  }
 `;

@@ -7,6 +7,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:visual-regression": "loki test",
     "eject": "react-scripts eject",
     "lint": "eslint ./src",
     "format": "prettier --write 'src/**/*.{ts,tsx,json}'",
@@ -39,6 +40,7 @@
     "eslint-plugin-react-hooks": "4.2.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
+    "loki": "^0.28.1",
     "mockdate": "^3.0.4",
     "prettier": "2.2.1",
     "prettier-eslint": "12.0.0",
@@ -83,5 +85,20 @@
       "npm run lint",
       "npm run format"
     ]
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.docker",
+        "preset": "iPhone 7"
+      }
+    }
   }
 }
