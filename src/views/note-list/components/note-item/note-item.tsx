@@ -36,11 +36,15 @@ const NoteItem = ({
   };
 
   return (
-    <Container onClick={(e) => onClick(e, id)} selected={selected}>
+    <Container
+      data-testid="note-item"
+      onClick={(e) => onClick(e, id)}
+      selected={selected}
+    >
       <NoteIcon type={type} />
       <Infos>
         <Header>
-          <Title>{title}</Title>
+          <Title data-testid="note-item-title">{title}</Title>
           {status === 'blocked' && (
             <Icon
               type="locker"

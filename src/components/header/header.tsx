@@ -19,7 +19,7 @@ const Header = ({ order, selectedNotes, add, toggleOrder }: IHeaderProps) => (
     ) : (
       <>
         <Title>Notes</Title>
-        <SortIcon onClick={toggleOrder}>
+        <SortIcon data-testid="sort-button" onClick={toggleOrder}>
           <Icon
             type={
               order === OrderType.descending
@@ -31,7 +31,7 @@ const Header = ({ order, selectedNotes, add, toggleOrder }: IHeaderProps) => (
             height={14}
           />
         </SortIcon>
-        <AddIcon onClick={add}>
+        <AddIcon data-testid="add-button" onClick={add}>
           <Icon type="plus" color={colors.gray} width={14} height={14} />
         </AddIcon>
       </>
