@@ -13,7 +13,7 @@ const mockNotes = [
     date: new Date('2021-01-12'),
     tags: ['studies'],
     status: 'pending',
-    type: 'text',
+    type: 'code-tag',
     selected: false
   },
   {
@@ -23,7 +23,7 @@ const mockNotes = [
     date: new Date('2021-01-17'),
     tags: ['work', 'task'],
     status: 'block',
-    type: 'text',
+    type: 'code-tag',
     selected: false
   },
   {
@@ -33,7 +33,7 @@ const mockNotes = [
     date: new Date('2021-01-25'),
     tags: ['friend'],
     status: 'done',
-    type: 'text',
+    type: 'code-tag',
     selected: false
   }
 ];
