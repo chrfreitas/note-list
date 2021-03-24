@@ -8,7 +8,7 @@ import NoteItem from './note-item';
 describe('Note Item Component', () => {
   test('shows locker icon when note status is blocked', () => {
     const note = {
-      type: 'text',
+      type: 'text-paragraph',
       title: faker.random.words(),
       subtitle: faker.random.words(),
       date: faker.date.past(),
@@ -24,7 +24,7 @@ describe('Note Item Component', () => {
 
   test('hides locker icon when note status is different than blocked', () => {
     const note = {
-      type: 'text',
+      type: 'text-paragraph',
       title: faker.random.words(),
       subtitle: faker.random.words(),
       date: faker.date.past(),

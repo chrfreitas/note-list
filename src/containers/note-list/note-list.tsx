@@ -39,7 +39,8 @@ const NoteList = () => {
   };
 
   const add = (): void => {
-    const note = generateFakeNote();
+    const today = new Date();
+    const note = generateFakeNote(today);
     setNotes((prev) => [note, ...prev]);
   };
 

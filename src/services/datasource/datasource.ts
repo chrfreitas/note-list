@@ -3,11 +3,11 @@ import faker from 'faker';
 import { INote } from '../../interfaces/note';
 import { IDataSource } from './datasource.interfaces';
 
-export const generateFakeNote = (): INote => ({
+export const generateFakeNote = (date?: Date): INote => ({
   id: faker.random.uuid(),
   title: faker.random.words(),
   subtitle: faker.random.words(),
-  date: faker.date.past(),
+  date: date || faker.date.past(),
   tags: faker.random.arrayElements([
     faker.random.word(),
     faker.random.word(),
