@@ -1,5 +1,5 @@
 import faker from 'faker';
-import { IDataSource, INoteDataSource } from './datasource.interface';
+import { IDataSource, INoteDataSource } from './datasource.interfaces';
 
 export const generateFakeNote = (): INoteDataSource => ({
   id: faker.random.uuid(),

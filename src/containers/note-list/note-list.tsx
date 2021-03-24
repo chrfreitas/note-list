@@ -3,30 +3,30 @@ import React, { useEffect, useMemo, useState } from 'react';
 import DataSource, {
   generateFakeNote
 } from '../../services/datasource/datasource';
-import { INoteDataSource } from '../../services/datasource/datasource.interface';
 import { orderByDate, OrderType } from '../../services/utils/utils';
 import { NoteList as NoteListView } from '../../views/note-list/note-list';
+import { INoteList } from './note-list.interfaces';
 
 // eslint-disable-next-line max-lines-per-function
 const NoteList = () => {
   const [order, setOrder] = useState<OrderType>(OrderType.ascending);
-  const [notes, setNotes] = useState<INoteDataSource[]>([]);
+  const [notes, setNotes] = useState<INoteList[]>([]);
 
   useEffect(() => {
-    const orderedNotes = orderByDate<INoteDataSource>(notes, order);
+    const orderedNotes = orderByDate<INoteList>(notes, order);
     setNotes(orderedNotes);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [order]);
 
   useEffect(() => {
     const data = DataSource.getNotes();
-    const orderedNotes = orderByDate<INoteDataSource>(data, order);
+    const orderedNotes = orderByDate<INoteList>(data, order);
     setNotes(orderedNotes);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const selectedNotes = useMemo(() => {
-    const filter: INoteDataSource[] = notes.filter((note) => note.selected);
+    const filter: INoteList[] = notes.filter((note) => note.selected);
     return filter.length;
   }, [notes]);
 
@@ -45,7 +45,7 @@ const NoteList = () => {
 
   const select = (id: string): void => {
     const filteredNotes = notes.reduce(
-      (total: INoteDataSource[], current: INoteDataSource) => {
+      (total: INoteList[], current: INoteList) => {
         if (current.id === id) {
           // eslint-disable-next-line no-param-reassign
           current.selected = !current.selected;
