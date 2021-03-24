@@ -1,16 +1,9 @@
 import React from 'react';
-import { OrderType } from '../../services/utils/utils';
 
 import { colors } from '../../styles/colors';
 import Icon from '../icon/icon';
+import { IHeaderProps, OrderType } from './header.interfaces';
 import { AddIcon, Container, Title, SortIcon } from './header.styles';
-
-interface IHeaderProps {
-  order: OrderType;
-  selectedNotes: number;
-  add: () => void;
-  toggleOrder: () => void;
-}
 
 const Header = ({ order, selectedNotes, add, toggleOrder }: IHeaderProps) => (
   <Container>
