@@ -12,20 +12,23 @@ const NoteList = () => {
   const [order, setOrder] = useState<OrderType>(OrderType.ascending);
   const [notes, setNotes] = useState<INoteDataSource[]>([]);
 
+  useEffect(() => {
+    const orderedNotes = orderByDate<INoteDataSource>(notes, order);
+    setNotes(orderedNotes);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [order]);
+
+  useEffect(() => {
+    const data = DataSource.getNotes();
+    const orderedNotes = orderByDate<INoteDataSource>(data, order);
+    setNotes(orderedNotes);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const selectedNotes = useMemo(() => {
     const filter: INoteDataSource[] = notes.filter((note) => note.selected);
     return filter.length;
   }, [notes]);
-
-  useEffect(() => {
-    const orderedNotes = orderByDate<INoteDataSource>(notes, order);
-    setNotes(orderedNotes);
-  }, [notes, order]);
-
-  useEffect(() => {
-    const data = DataSource.getNotes();
-    setNotes(data);
-  }, []);
 
   const toggleOrder = (): void => {
     if (order === OrderType.ascending) {

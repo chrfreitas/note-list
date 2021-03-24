@@ -10,13 +10,15 @@ export const orderByDate = <T extends { date: Date }>(
   array: T[],
   order = OrderType.ascending
 ): T[] => {
+  const newArray = [...array];
+
   if (order === OrderType.descending) {
-    return array.sort(
+    return newArray.sort(
       (noteA, noteB) => noteA.date.getTime() - noteB.date.getTime()
     );
   }
 
-  return array.sort(
+  return newArray.sort(
     (noteA, noteB) => noteB.date.getTime() - noteA.date.getTime()
   );
 };
