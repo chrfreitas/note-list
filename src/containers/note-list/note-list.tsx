@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import DataSource, {
   generateFakeNote
@@ -11,7 +11,6 @@ import { NoteList as NoteListView } from '../../views/note-list/note-list';
 const NoteList = () => {
   const [order, setOrder] = useState<OrderType>(OrderType.ascending);
   const [notes, setNotes] = useState<INoteDataSource[]>([]);
-  const [selectedNotes, setSelectedNotes] = useState<string[]>([]);
 
   const data = DataSource.getNotes();
 
@@ -29,17 +28,32 @@ const NoteList = () => {
   };
 
   const select = (id: string): void => {
-    const selectedNote = selectedNotes.find((noteId) => noteId === id);
+    console.log(id);
 
-    if (selectedNote) {
-      const selectedNotesFiltered = selectedNotes.filter(
-        (noteId) => noteId !== id
-      );
-      return setSelectedNotes(selectedNotesFiltered);
-    }
+    const filteredNotes = notes.reduce(
+      (total: INoteDataSource[], current: INoteDataSource) => {
+        if (current.id === id) {
+          // eslint-disable-next-line no-param-reassign
+          current.selected = !current.selected;
+        }
 
-    return setSelectedNotes((prev) => [id, ...prev]);
+        return [...total, current];
+      },
+      []
+    );
+
+    setNotes(filteredNotes);
   };
+
+  const clearAllSelects = (): void => {
+    const unselectedNotes = notes.map((note) => ({ ...note, selected: false }));
+    setNotes(unselectedNotes);
+  };
+
+  const selectedNotes = useMemo(() => {
+    const filter: INoteDataSource[] = notes.filter((note) => note.selected);
+    return filter.length;
+  }, [notes]);
 
   useEffect(() => {
     const orderedNotes = orderByDate<INoteDataSource>(data, order);
@@ -54,6 +68,7 @@ const NoteList = () => {
       selectedNotes={selectedNotes}
       add={add}
       select={select}
+      clearAllSelects={clearAllSelects}
       toggleOrder={toggleOrder}
     />
   );

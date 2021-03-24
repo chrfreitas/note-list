@@ -14,7 +14,7 @@ export const Container = styled.div<ContainerProps>`
   cursor: pointer;
   transition: border-left 0.2s;
 
-  ${(props) => props.selected && `border-left: 4px solid ${colors.blue};`};
+  ${({ selected }) => selected && `border-left: 4px solid ${colors.blue};`};
 
   :hover {
     background-color: ${colors.lightGray};

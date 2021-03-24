@@ -9,9 +9,10 @@ import { Container } from './note-list.styles';
 interface INoteListProps {
   notes: INoteDataSource[];
   order: OrderType;
-  selectedNotes: string[];
+  selectedNotes: number;
   add: () => void;
-  select: (id: string) => void;
+  select: (note: string) => void;
+  clearAllSelects: () => void;
   toggleOrder: () => void;
 }
 
@@ -21,6 +22,7 @@ export const NoteList = ({
   selectedNotes,
   add,
   select,
+  clearAllSelects,
   toggleOrder
 }: INoteListProps) =>
   notes.length ? (
@@ -32,7 +34,12 @@ export const NoteList = ({
         toggleOrder={toggleOrder}
       />
       {notes.map((note) => (
-        <NoteItem key={note.id} select={select} {...note} />
+        <NoteItem
+          key={note.id}
+          select={select}
+          clearAllSelects={clearAllSelects}
+          {...note}
+        />
       ))}
     </Container>
   ) : (

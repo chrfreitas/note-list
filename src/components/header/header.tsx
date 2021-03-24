@@ -7,15 +7,15 @@ import { AddIcon, Container, Title, SortIcon } from './header.styles';
 
 interface IHeaderProps {
   order: OrderType;
-  selectedNotes: string[];
+  selectedNotes: number;
   add: () => void;
   toggleOrder: () => void;
 }
 
 const Header = ({ order, selectedNotes, add, toggleOrder }: IHeaderProps) => (
   <Container>
-    {selectedNotes.length ? (
-      <Title>{selectedNotes.length} items selected</Title>
+    {selectedNotes ? (
+      <Title>{selectedNotes} items selected</Title>
     ) : (
       <>
         <Title>Notes</Title>

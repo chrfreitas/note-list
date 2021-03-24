@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { MouseEvent } from 'react';
 
 import { INoteDataSource } from '../../../../services/datasource/datasource.interface';
+import { colors } from '../../../../styles/colors';
 import Icon from '../../../../components/icon/icon';
 import NoteTags from '../note-tags/note-tags';
 import NoteDate from '../note-date/note-date';
 import NoteIcon from '../note-icon/note-icon';
 import { Container, Title, Subtitle, Infos, Header } from './note-item.styles';
-import { colors } from '../../../../styles/colors';
 
 interface INoteItemProps extends INoteDataSource {
   select: (id: string) => void;
+  clearAllSelects: () => void;
 }
 
 // eslint-disable-next-line max-lines-per-function
@@ -21,17 +22,21 @@ const NoteItem = ({
   date,
   tags,
   status,
-  select
+  selected,
+  select,
+  clearAllSelects
 }: INoteItemProps) => {
-  const [selected, setSelected] = useState<boolean>(false);
+  const onClick = (e: MouseEvent, noteId: string): void => {
+    if (e.ctrlKey || e.metaKey) {
+      select(noteId);
+      return;
+    }
 
-  const onClick = (noteId: string): void => {
-    select(noteId);
-    setSelected((prev) => !prev);
+    clearAllSelects();
   };
 
   return (
-    <Container onClick={() => onClick(id)} selected={selected}>
+    <Container onClick={(e) => onClick(e, id)} selected={selected}>
       <NoteIcon type={type} />
       <Infos>
         <Header>
