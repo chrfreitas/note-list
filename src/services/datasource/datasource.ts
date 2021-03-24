@@ -1,11 +1,13 @@
 import faker from 'faker';
-import { IDataSource, INoteDataSource } from './datasource.interface';
 
-export const generateFakeNote = (): INoteDataSource => ({
+import { INote } from '../../interfaces/note';
+import { IDataSource } from './datasource.interfaces';
+
+export const generateFakeNote = (date?: Date): INote => ({
   id: faker.random.uuid(),
   title: faker.random.words(),
   subtitle: faker.random.words(),
-  date: faker.date.past(),
+  date: date || faker.date.past(),
   tags: faker.random.arrayElements([
     faker.random.word(),
     faker.random.word(),
@@ -17,8 +19,8 @@ export const generateFakeNote = (): INoteDataSource => ({
   status: faker.random.arrayElement(['blocked', 'pending', 'done']),
   type: faker.random.arrayElement([
     'text-rich',
-    'text',
-    'code',
+    'code-tag',
+    'text-paragraph',
     'spreadsheet',
     'timer'
   ]),
@@ -27,7 +29,7 @@ export const generateFakeNote = (): INoteDataSource => ({
 
 const DataSource: IDataSource = {
   getNotes: () =>
-    faker.random.arrayElements<INoteDataSource>([
+    faker.random.arrayElements<INote>([
       generateFakeNote(),
       generateFakeNote(),
       generateFakeNote(),

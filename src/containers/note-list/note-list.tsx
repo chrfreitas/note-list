@@ -3,58 +3,56 @@ import React, { useEffect, useMemo, useState } from 'react';
 import DataSource, {
   generateFakeNote
 } from '../../services/datasource/datasource';
-import { INoteDataSource } from '../../services/datasource/datasource.interface';
-import { orderByDate, OrderType } from '../../services/utils/utils';
+import { NotesOrder, INote } from '../../interfaces/note';
+import { orderByDate } from '../../services/utils/utils';
 import { NoteList as NoteListView } from '../../views/note-list/note-list';
 
 // eslint-disable-next-line max-lines-per-function
 const NoteList = () => {
-  const [order, setOrder] = useState<OrderType>(OrderType.ascending);
-  const [notes, setNotes] = useState<INoteDataSource[]>([]);
+  const [order, setOrder] = useState<NotesOrder>(NotesOrder.ascending);
+  const [notes, setNotes] = useState<INote[]>([]);
 
   useEffect(() => {
-    const orderedNotes = orderByDate<INoteDataSource>(notes, order);
+    const orderedNotes = orderByDate<INote>(notes, order);
     setNotes(orderedNotes);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [order]);
 
   useEffect(() => {
     const data = DataSource.getNotes();
-    const orderedNotes = orderByDate<INoteDataSource>(data, order);
+    const orderedNotes = orderByDate<INote>(data, order);
     setNotes(orderedNotes);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const selectedNotes = useMemo(() => {
-    const filter: INoteDataSource[] = notes.filter((note) => note.selected);
+    const filter: INote[] = notes.filter((note) => note.selected);
     return filter.length;
   }, [notes]);
 
   const toggleOrder = (): void => {
-    if (order === OrderType.ascending) {
-      return setOrder(OrderType.descending);
+    if (order === NotesOrder.ascending) {
+      return setOrder(NotesOrder.descending);
     }
 
-    return setOrder(OrderType.ascending);
+    return setOrder(NotesOrder.ascending);
   };
 
   const add = (): void => {
-    const note = generateFakeNote();
+    const today = new Date();
+    const note = generateFakeNote(today);
     setNotes((prev) => [note, ...prev]);
   };
 
   const select = (id: string): void => {
-    const filteredNotes = notes.reduce(
-      (total: INoteDataSource[], current: INoteDataSource) => {
-        if (current.id === id) {
-          // eslint-disable-next-line no-param-reassign
-          current.selected = !current.selected;
-        }
+    const filteredNotes = notes.reduce((total: INote[], current: INote) => {
+      if (current.id === id) {
+        // eslint-disable-next-line no-param-reassign
+        current.selected = !current.selected;
+      }
 
-        return [...total, current];
-      },
-      []
-    );
+      return [...total, current];
+    }, []);
 
     setNotes(filteredNotes);
   };

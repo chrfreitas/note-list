@@ -1,20 +1,10 @@
 import React from 'react';
 
 import Header from '../../components/header/header';
-import { INoteDataSource } from '../../services/datasource/datasource.interface';
-import { OrderType } from '../../services/utils/utils';
+
 import NoteItem from './components/note-item/note-item';
 import { Container } from './note-list.styles';
-
-interface INoteListProps {
-  notes: INoteDataSource[];
-  order: OrderType;
-  selectedNotes: number;
-  add: () => void;
-  select: (note: string) => void;
-  clearAllSelects: () => void;
-  toggleOrder: () => void;
-}
+import { INoteListProps } from './note-list.interfaces';
 
 export const NoteList = ({
   notes,

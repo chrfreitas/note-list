@@ -1,4 +1,5 @@
-import { capitalize, orderByDate, OrderType } from './utils';
+import { NotesOrder } from '../../interfaces/note';
+import { capitalize, orderByDate } from './utils';
 
 describe('Util Capitalize', () => {
   test('uppercase the first letter (capitalize)', () => {
@@ -36,7 +37,7 @@ describe('Util OrderByDate', () => {
       { date: new Date('2021-03-20') }
     ];
 
-    const orderedArray = orderByDate(array, OrderType.descending);
+    const orderedArray = orderByDate(array, NotesOrder.descending);
     expect(orderedArray).toEqual(arrayExpected);
   });
 });

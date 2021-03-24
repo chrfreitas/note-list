@@ -1,11 +1,8 @@
 import React from 'react';
+
 import { capitalize } from '../../../../services/utils/utils';
-
 import { Container, Tag } from './note-tags.styles';
-
-interface INoteTagProps {
-  tags: string[];
-}
+import { INoteTagProps } from './note-tags.interfaces';
 
 const NoteTags = ({ tags }: INoteTagProps) => (
   <Container>

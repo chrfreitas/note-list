@@ -1,18 +1,15 @@
-export enum OrderType {
-  ascending = 'ascending',
-  descending = 'descending'
-}
+import { NotesOrder } from '../../interfaces/note';
 
 export const capitalize = (world: string): string =>
   world.charAt(0).toUpperCase() + world.slice(1);
 
 export const orderByDate = <T extends { date: Date }>(
   array: T[],
-  order = OrderType.ascending
+  order = NotesOrder.ascending
 ): T[] => {
   const newArray = [...array];
 
-  if (order === OrderType.descending) {
+  if (order === NotesOrder.descending) {
     return newArray.sort(
       (noteA, noteB) => noteA.date.getTime() - noteB.date.getTime()
     );
