@@ -26,6 +26,7 @@ export const AddIcon = styled.div`
   border: 1px solid ${colors.blue};
   width: 32px;
   height: 32px;
+  cursor: pointer;
 `;
 
 export const SortIcon = styled.div`
@@ -37,4 +38,5 @@ export const SortIcon = styled.div`
   border: 1px solid ${colors.gray};
   width: 32px;
   height: 32px;
+  cursor: pointer;
 `;

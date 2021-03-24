@@ -14,6 +14,7 @@ export interface INoteDataSource {
   tags: string[];
   status: INoteStatusDataSource;
   type: INoteTypeDataSource;
+  selected: boolean;
 }
 
 export interface IDataSource {

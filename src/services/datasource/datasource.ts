@@ -21,7 +21,8 @@ export const generateFakeNote = (): INoteDataSource => ({
     'code',
     'spreadsheet',
     'timer'
-  ])
+  ]),
+  selected: false
 });
 
 const DataSource: IDataSource = {
