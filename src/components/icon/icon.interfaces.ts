@@ -1,13 +1,9 @@
+import { INoteIcons } from '../../interfaces/note';
+
+type IIconTypes = 'plus' | 'sort-ascending' | 'sort-descending' | 'locker';
+
 export interface IIconProps {
-  type:
-    | 'plus'
-    | 'sort-descending'
-    | 'text-rich'
-    | 'code-tag'
-    | 'text-paragraph'
-    | 'spreadsheet'
-    | 'timer'
-    | string;
+  type: IIconTypes | INoteIcons;
   color: string;
   width: number;
   height: number;

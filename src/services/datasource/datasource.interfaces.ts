@@ -1,22 +1,5 @@
-type INoteStatusDataSource = 'blocked' | 'pending' | 'done';
-type INoteTypeDataSource =
-  | 'text-rich'
-  | 'text'
-  | 'code'
-  | 'spreadsheet'
-  | 'timer';
-
-export interface INoteDataSource {
-  id: string;
-  title: string;
-  subtitle: string;
-  date: Date;
-  tags: string[];
-  status: INoteStatusDataSource;
-  type: INoteTypeDataSource;
-  selected: boolean;
-}
+import { INote } from '../../interfaces/note';
 
 export interface IDataSource {
-  getNotes: () => INoteDataSource[];
+  getNotes: () => INote[];
 }

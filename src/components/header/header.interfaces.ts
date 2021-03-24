@@ -1,10 +1,7 @@
-export enum OrderType {
-  ascending = 'ascending',
-  descending = 'descending'
-}
+import { NotesOrder } from '../../interfaces/note';
 
 export interface IHeaderProps {
-  order: OrderType;
+  order: NotesOrder;
   selectedNotes: number;
   add: () => void;
   toggleOrder: () => void;

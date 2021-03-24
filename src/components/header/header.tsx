@@ -1,8 +1,9 @@
 import React from 'react';
+import { NotesOrder } from '../../interfaces/note';
 
 import { colors } from '../../styles/colors';
 import Icon from '../icon/icon';
-import { IHeaderProps, OrderType } from './header.interfaces';
+import { IHeaderProps } from './header.interfaces';
 import { AddIcon, Container, Title, SortIcon } from './header.styles';
 
 const Header = ({ order, selectedNotes, add, toggleOrder }: IHeaderProps) => (
@@ -15,7 +16,7 @@ const Header = ({ order, selectedNotes, add, toggleOrder }: IHeaderProps) => (
         <SortIcon data-testid="sort-button" onClick={toggleOrder}>
           <Icon
             type={
-              order === OrderType.descending
+              order === NotesOrder.descending
                 ? 'sort-descending'
                 : 'sort-ascending'
             }

@@ -1,5 +1,14 @@
-type INoteType = 'text-rich' | 'text' | 'code' | 'spreadsheet' | 'timer';
+import { INoteIcons } from '../../../../interfaces/note';
 
 export interface INoteIconProps {
-  type: INoteType;
+  type: INoteIcons;
+}
+
+export interface INoteIconTypes {
+  [key: string]: {
+    icon: INoteIcons;
+    color: string;
+    width: number;
+    height: number;
+  };
 }

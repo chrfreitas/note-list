@@ -1,22 +1,8 @@
-import { OrderType } from '../../services/utils/utils';
-
-type INoteListStatus = 'blocked' | 'pending' | 'done';
-type INoteListType = 'text-rich' | 'text' | 'code' | 'spreadsheet' | 'timer';
-
-interface INoteList {
-  id: string;
-  title: string;
-  subtitle: string;
-  date: Date;
-  tags: string[];
-  status: INoteListStatus;
-  type: INoteListType;
-  selected: boolean;
-}
+import { INote, NotesOrder } from '../../interfaces/note';
 
 export interface INoteListProps {
-  notes: INoteList[];
-  order: OrderType;
+  notes: INote[];
+  order: NotesOrder;
   selectedNotes: number;
   add: () => void;
   select: (note: string) => void;
