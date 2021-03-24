@@ -11,6 +11,7 @@ import { NoteList as NoteListView } from '../../views/note-list/note-list';
 const NoteList = () => {
   const [order, setOrder] = useState<OrderType>(OrderType.ascending);
   const [notes, setNotes] = useState<INoteDataSource[]>([]);
+  const [selectedNotes, setSelectedNotes] = useState<string[]>([]);
 
   const data = DataSource.getNotes();
 
@@ -27,6 +28,19 @@ const NoteList = () => {
     setNotes((prev) => [note, ...prev]);
   };
 
+  const select = (id: string): void => {
+    const selectedNote = selectedNotes.find((noteId) => noteId === id);
+
+    if (selectedNote) {
+      const selectedNotesFiltered = selectedNotes.filter(
+        (noteId) => noteId !== id
+      );
+      return setSelectedNotes(selectedNotesFiltered);
+    }
+
+    return setSelectedNotes((prev) => [id, ...prev]);
+  };
+
   useEffect(() => {
     const orderedNotes = orderByDate<INoteDataSource>(data, order);
     setNotes(orderedNotes);
@@ -35,9 +49,11 @@ const NoteList = () => {
 
   return (
     <NoteListView
-      add={add}
       notes={notes}
       order={order}
+      selectedNotes={selectedNotes}
+      add={add}
+      select={select}
       toggleOrder={toggleOrder}
     />
   );
