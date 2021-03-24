@@ -12,7 +12,20 @@ const NoteList = () => {
   const [order, setOrder] = useState<OrderType>(OrderType.ascending);
   const [notes, setNotes] = useState<INoteDataSource[]>([]);
 
-  const data = DataSource.getNotes();
+  const selectedNotes = useMemo(() => {
+    const filter: INoteDataSource[] = notes.filter((note) => note.selected);
+    return filter.length;
+  }, [notes]);
+
+  useEffect(() => {
+    const orderedNotes = orderByDate<INoteDataSource>(notes, order);
+    setNotes(orderedNotes);
+  }, [notes, order]);
+
+  useEffect(() => {
+    const data = DataSource.getNotes();
+    setNotes(data);
+  }, []);
 
   const toggleOrder = (): void => {
     if (order === OrderType.ascending) {
@@ -28,8 +41,6 @@ const NoteList = () => {
   };
 
   const select = (id: string): void => {
-    console.log(id);
-
     const filteredNotes = notes.reduce(
       (total: INoteDataSource[], current: INoteDataSource) => {
         if (current.id === id) {
@@ -49,17 +60,6 @@ const NoteList = () => {
     const unselectedNotes = notes.map((note) => ({ ...note, selected: false }));
     setNotes(unselectedNotes);
   };
-
-  const selectedNotes = useMemo(() => {
-    const filter: INoteDataSource[] = notes.filter((note) => note.selected);
-    return filter.length;
-  }, [notes]);
-
-  useEffect(() => {
-    const orderedNotes = orderByDate<INoteDataSource>(data, order);
-    setNotes(orderedNotes);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [order]);
 
   return (
     <NoteListView
