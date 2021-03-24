@@ -6,10 +6,15 @@ import Icon from '../icon/icon';
 import { IHeaderProps } from './header.interfaces';
 import { AddIcon, Container, Title, SortIcon } from './header.styles';
 
-const Header = ({ order, selectedNotes, add, toggleOrder }: IHeaderProps) => (
+const Header = ({
+  order,
+  numberOfSelected,
+  add,
+  toggleOrder
+}: IHeaderProps) => (
   <Container>
-    {selectedNotes ? (
-      <Title>{selectedNotes} items selected</Title>
+    {numberOfSelected ? (
+      <Title>{numberOfSelected} items selected</Title>
     ) : (
       <>
         <Title>Notes</Title>

@@ -32,7 +32,7 @@
     "max-lines-per-function": [
       "error",
       {
-        "max": 30
+        "max": 50
       }
     ],
     "max-params": [
@@ -73,6 +73,7 @@
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-wrap-multilines": "off",
     "react/destructuring-assignment": "off",
+    "react-hooks/exhaustive-deps":"off",
     "@typescript-eslint/no-unused-vars": [
       "warn",
       {
