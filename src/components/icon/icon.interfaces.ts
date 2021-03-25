@@ -1,6 +1,11 @@
 import { INoteIcons } from '../../interfaces/note';
 
-type IIconTypes = 'plus' | 'sort-ascending' | 'sort-descending' | 'locker';
+type IIconTypes =
+  | 'plus'
+  | 'sort-ascending'
+  | 'sort-descending'
+  | 'locker'
+  | 'close';
 
 export interface IIconProps {
   type: IIconTypes | INoteIcons;

@@ -21,6 +21,7 @@ export const NoteList = ({
       numberOfSelected={numberOfSelected}
       add={add}
       toggleOrder={toggleOrder}
+      clear={clear}
     />
     {notes.length ? (
       notes.map((note) => (

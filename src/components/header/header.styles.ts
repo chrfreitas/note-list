@@ -48,3 +48,11 @@ export const SortIcon = styled.div`
     display: block;
   }
 `;
+
+export const CloseIcon = styled.div`
+  cursor: pointer;
+
+  svg {
+    display: block;
+  }
+`;

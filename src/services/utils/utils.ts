@@ -19,3 +19,8 @@ export const orderByDate = <T extends { date: Date }>(
     (noteA, noteB) => noteB.date.getTime() - noteA.date.getTime()
   );
 };
+
+export const isMobile = (): boolean =>
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );

@@ -4,17 +4,30 @@ import { NotesOrder } from '../../interfaces/note';
 import { colors } from '../../styles/colors';
 import Icon from '../icon/icon';
 import { IHeaderProps } from './header.interfaces';
-import { AddIcon, Container, Title, SortIcon } from './header.styles';
+import {
+  AddIcon,
+  Container,
+  Title,
+  SortIcon,
+  CloseIcon
+} from './header.styles';
 
 const Header = ({
   order,
   numberOfSelected,
   add,
-  toggleOrder
+  toggleOrder,
+  clear
 }: IHeaderProps) => (
   <Container>
     {numberOfSelected ? (
-      <Title>{numberOfSelected} items selected</Title>
+      <>
+        <Title>{numberOfSelected} items selected</Title>
+        <span />
+        <CloseIcon onClick={clear}>
+          <Icon type="close" color={colors.darkGray} width={18} height={14} />
+        </CloseIcon>
+      </>
     ) : (
       <>
         <Title>Notes</Title>
