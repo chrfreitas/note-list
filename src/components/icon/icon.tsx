@@ -10,6 +10,7 @@ import { ReactComponent as TextParagraph } from '../../assets/icons/text-paragra
 import { ReactComponent as Spreadsheet } from '../../assets/icons/spreadsheet.svg';
 import { ReactComponent as Timer } from '../../assets/icons/timer.svg';
 import { ReactComponent as Locker } from '../../assets/icons/locker.svg';
+import { ReactComponent as Close } from '../../assets/icons/close.svg';
 import { IIconProps } from './icon.interfaces';
 
 // eslint-disable-next-line complexity
@@ -33,6 +34,8 @@ const generateSvg = (type: string) => {
       return <Timer />;
     case 'locker':
       return <Locker />;
+    case 'close':
+      return <Close />;
     default:
       return null;
   }

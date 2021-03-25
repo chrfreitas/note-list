@@ -5,4 +5,5 @@ export interface IHeaderProps {
   numberOfSelected: number;
   add: () => void;
   toggleOrder: () => void;
+  clear: () => void;
 }
