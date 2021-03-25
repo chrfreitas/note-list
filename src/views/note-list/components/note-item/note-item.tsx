@@ -1,6 +1,7 @@
 import React, { MouseEvent } from 'react';
 
 import { colors } from '../../../../styles/colors';
+import { isMobile } from '../../../../services/utils/utils';
 import Icon from '../../../../components/icon/icon';
 import NoteTags from '../note-tags/note-tags';
 import NoteDate from '../note-date/note-date';
@@ -22,7 +23,7 @@ const NoteItem = ({
   clear
 }: INoteItemProps) => {
   const onClick = (e: MouseEvent, noteId: string): void => {
-    if (e.ctrlKey || e.metaKey) {
+    if (e.ctrlKey || e.metaKey || isMobile()) {
       select(noteId);
       return;
     }
