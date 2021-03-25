@@ -74,5 +74,8 @@ jobs:
           key: node_modules-${{ hashFiles('**/package-lock.json') }}
           restore-keys: node_modules-
 
+      - name: Storybook
+        run: npm run storybook
+
       - name: Visual regression tests
         run: npm run test:visual-regression
