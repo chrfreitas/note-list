@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/note-list/static/css/main.46f2465a.chunk.css",
-    "main.js": "/note-list/static/js/main.28b531d8.chunk.js",
-    "main.js.map": "/note-list/static/js/main.28b531d8.chunk.js.map",
+    "main.js": "/note-list/static/js/main.c46bed2b.chunk.js",
+    "main.js.map": "/note-list/static/js/main.c46bed2b.chunk.js.map",
     "runtime-main.js": "/note-list/static/js/runtime-main.1ca81f9a.js",
     "runtime-main.js.map": "/note-list/static/js/runtime-main.1ca81f9a.js.map",
     "static/js/2.457871e6.chunk.js": "/note-list/static/js/2.457871e6.chunk.js",
@@ -12,6 +12,7 @@
     "index.html": "/note-list/index.html",
     "static/css/main.46f2465a.chunk.css.map": "/note-list/static/css/main.46f2465a.chunk.css.map",
     "static/js/2.457871e6.chunk.js.LICENSE.txt": "/note-list/static/js/2.457871e6.chunk.js.LICENSE.txt",
+    "static/media/close.bd20a158.svg": "/note-list/static/media/close.bd20a158.svg",
     "static/media/code-tag.7dc0d5f3.svg": "/note-list/static/media/code-tag.7dc0d5f3.svg",
     "static/media/locker.edb15e6b.svg": "/note-list/static/media/locker.edb15e6b.svg",
     "static/media/plus.d20c5c5f.svg": "/note-list/static/media/plus.d20c5c5f.svg",
@@ -27,6 +28,6 @@
     "static/js/runtime-main.1ca81f9a.js",
     "static/js/2.457871e6.chunk.js",
     "static/css/main.46f2465a.chunk.css",
-    "static/js/main.28b531d8.chunk.js"
+    "static/js/main.c46bed2b.chunk.js"
   ]
 }
