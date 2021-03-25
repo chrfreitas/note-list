@@ -17,7 +17,6 @@ const Header = ({
       <Title>{numberOfSelected} items selected</Title>
     ) : (
       <>
-        <Title>Notes</Title>
         <SortIcon data-testid="sort-button" onClick={toggleOrder}>
           <Icon
             type={
