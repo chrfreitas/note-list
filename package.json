@@ -7,11 +7,20 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:visual-regression": "loki test",
     "eject": "react-scripts eject",
     "lint": "eslint ./src",
-    "format": "prettier --write 'src/**/*.{ts,tsx,json}'"
+    "format": "prettier --write 'src/**/*.{ts,tsx,json}'",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/node-logger": "^6.1.21",
+    "@storybook/preset-create-react-app": "^3.1.7",
+    "@storybook/react": "^6.1.21",
     "@types/faker": "^5.1.7",
     "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "4.18.0",
@@ -31,6 +40,7 @@
     "eslint-plugin-react-hooks": "4.2.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
+    "loki": "^0.28.1",
     "mockdate": "^3.0.4",
     "prettier": "2.2.1",
     "prettier-eslint": "12.0.0",
@@ -75,5 +85,20 @@
       "npm run lint",
       "npm run format"
     ]
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.docker",
+        "preset": "iPhone 7"
+      }
+    }
   }
 }

@@ -58,3 +58,21 @@ jobs:
 
       - name: Integration tests
         run: npm test
+
+  visual-regression-test:
+    name: visual regression test 🌡
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: node_modules-
+
+      - name: Storybook and Visual regression tests
+        run: npm run storybook & npm run test:visual-regression
