@@ -1,10 +1,8 @@
 import React, { ComponentProps } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Story } from '@storybook/react';
 import NoteItem from './note-item';
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default {
+const NoteItemStoryBook = {
   title: 'NoteItem',
   component: NoteItem
 };
@@ -38,3 +36,5 @@ HeaderBlocked.args = {
   ...HeaderDefault.args,
   status: 'blocked'
 };
+
+export default NoteItemStoryBook;

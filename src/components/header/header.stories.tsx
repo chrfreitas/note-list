@@ -1,11 +1,9 @@
 import React, { ComponentProps } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Story } from '@storybook/react';
 import Header from './header';
 import { NotesOrder } from '../../interfaces/note';
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default {
+const HeaderStoryBook = {
   title: 'Header',
   component: Header
 };
@@ -21,3 +19,5 @@ HeaderStory.args = {
   add: () => {},
   toggleOrder: () => {}
 };
+
+export default HeaderStoryBook;

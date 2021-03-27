@@ -23,7 +23,7 @@ export const NoteList = ({
       toggleOrder={toggleOrder}
       clear={clear}
     />
-    {notes.length ? (
+    {notes.length > 0 ? (
       notes.map((note) => (
         <NoteItem key={note.id} select={select} clear={clear} {...note} />
       ))
