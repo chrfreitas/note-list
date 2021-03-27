@@ -1,6 +1,6 @@
 import { INote } from '../../../../interfaces/note';
 
 export interface INoteItemProps extends INote {
-  select: (id: string) => void;
-  clear: () => void;
+  onSelect: (id: string) => void;
+  onClear: () => void;
 }

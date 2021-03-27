@@ -21,8 +21,8 @@ HeaderDefault.args = {
   tags: ['studies', 'spanish'],
   status: 'pending',
   selected: false,
-  select: () => {},
-  clear: () => {}
+  onSelect: () => {},
+  onClear: () => {}
 };
 
 export const HeaderSelected = Template.bind({});

@@ -8,10 +8,10 @@ const NoteList = () => {
     notes,
     order,
     numberOfSelected,
-    add,
-    select,
-    clear,
-    toggleOrder
+    onAdd,
+    onSelect,
+    onClear,
+    onToggleOrder
   } = useNotes();
 
   return (
@@ -19,10 +19,10 @@ const NoteList = () => {
       notes={notes}
       order={order}
       numberOfSelected={numberOfSelected}
-      add={add}
-      select={select}
-      clear={clear}
-      toggleOrder={toggleOrder}
+      onAdd={onAdd}
+      onSelect={onSelect}
+      onClear={onClear}
+      onToggleOrder={onToggleOrder}
     />
   );
 };

@@ -16,8 +16,8 @@ export const HeaderStory = Template.bind({});
 HeaderStory.args = {
   order: NotesOrder.descending,
   numberOfSelected: 0,
-  add: () => {},
-  toggleOrder: () => {}
+  onAdd: () => {},
+  onToggleOrder: () => {}
 };
 
 export default HeaderStoryBook;

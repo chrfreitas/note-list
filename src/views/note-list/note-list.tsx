@@ -10,22 +10,27 @@ export const NoteList = ({
   notes,
   order,
   numberOfSelected,
-  add,
-  select,
-  clear,
-  toggleOrder
+  onAdd,
+  onSelect,
+  onClear,
+  onToggleOrder
 }: INoteListProps) => (
   <Container>
     <Header
       order={order}
       numberOfSelected={numberOfSelected}
-      add={add}
-      toggleOrder={toggleOrder}
-      clear={clear}
+      onAdd={onAdd}
+      onToggleOrder={onToggleOrder}
+      onClear={onClear}
     />
     {notes.length > 0 ? (
       notes.map((note) => (
-        <NoteItem key={note.id} select={select} clear={clear} {...note} />
+        <NoteItem
+          key={note.id}
+          onSelect={onSelect}
+          onClear={onClear}
+          {...note}
+        />
       ))
     ) : (
       <ListSkeletonLoader quantity={6} />

@@ -10,10 +10,10 @@ interface IUseNote {
   notes: INote[];
   order: NotesOrder;
   numberOfSelected: number;
-  toggleOrder: () => void;
-  add: () => void;
-  select: (id: string) => void;
-  clear: () => void;
+  onToggleOrder: () => void;
+  onAdd: () => void;
+  onSelect: (id: string) => void;
+  onClear: () => void;
 }
 
 // eslint-disable-next-line max-lines-per-function
@@ -37,13 +37,13 @@ export const useNotes = (): IUseNote => {
     return filter.length;
   }, [notes]);
 
-  const add = (): void => {
+  const onAdd = (): void => {
     const today = new Date();
     const note = generateFakeNote(today);
     setNotes((prev) => [note, ...prev]);
   };
 
-  const select = (id: string): void => {
+  const onSelect = (id: string): void => {
     const filteredNotes = notes.reduce((total: INote[], current: INote) => {
       if (current.id === id) {
         // eslint-disable-next-line no-param-reassign
@@ -56,12 +56,12 @@ export const useNotes = (): IUseNote => {
     setNotes(filteredNotes);
   };
 
-  const clear = (): void => {
+  const onClear = (): void => {
     const unselectedNotes = notes.map((note) => ({ ...note, selected: false }));
     setNotes(unselectedNotes);
   };
 
-  const toggleOrder = (): void => {
+  const onToggleOrder = (): void => {
     if (order === NotesOrder.ascending) {
       return setOrder(NotesOrder.descending);
     }
@@ -73,9 +73,9 @@ export const useNotes = (): IUseNote => {
     notes,
     order,
     numberOfSelected,
-    add,
-    select,
-    clear,
-    toggleOrder
+    onAdd,
+    onSelect,
+    onClear,
+    onToggleOrder
   };
 };

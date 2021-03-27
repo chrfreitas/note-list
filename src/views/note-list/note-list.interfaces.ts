@@ -4,8 +4,8 @@ export interface INoteListProps {
   notes: INote[];
   order: NotesOrder;
   numberOfSelected: number;
-  add: () => void;
-  select: (note: string) => void;
-  clear: () => void;
-  toggleOrder: () => void;
+  onAdd: () => void;
+  onSelect: (note: string) => void;
+  onClear: () => void;
+  onToggleOrder: () => void;
 }

@@ -15,23 +15,23 @@ import {
 const Header = ({
   order,
   numberOfSelected,
-  add,
-  toggleOrder,
-  clear
+  onAdd,
+  onToggleOrder,
+  onClear
 }: IHeaderProps) => (
   <Container>
     {numberOfSelected ? (
       <>
         <Title>{numberOfSelected} items selected</Title>
         <span />
-        <CloseIcon onClick={clear}>
+        <CloseIcon onClick={onClear}>
           <Icon type="close" color={colors.darkGray} width={18} height={14} />
         </CloseIcon>
       </>
     ) : (
       <>
         <Title>Notes</Title>
-        <SortIcon data-testid="sort-button" onClick={toggleOrder}>
+        <SortIcon data-testid="sort-button" onClick={onToggleOrder}>
           <Icon
             type={
               order === NotesOrder.descending
@@ -43,7 +43,7 @@ const Header = ({
             height={14}
           />
         </SortIcon>
-        <AddIcon data-testid="add-button" onClick={add}>
+        <AddIcon data-testid="add-button" onClick={onAdd}>
           <Icon type="plus" color={colors.gray} width={14} height={14} />
         </AddIcon>
       </>

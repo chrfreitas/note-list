@@ -18,16 +18,16 @@ const NoteItem = ({
   tags,
   status,
   selected,
-  select,
-  clear
+  onSelect,
+  onClear
 }: INoteItemProps) => {
   const onClick = (e: MouseEvent, noteId: string): void => {
     if (e.ctrlKey || e.metaKey || isMobile()) {
-      select(noteId);
+      onSelect(noteId);
       return;
     }
 
-    clear();
+    onClear();
   };
 
   return (
