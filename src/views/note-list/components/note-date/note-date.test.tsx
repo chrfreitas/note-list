@@ -4,7 +4,6 @@ import MockDate from 'mockdate';
 
 import NoteDate from './note-date';
 
-// eslint-disable-next-line max-lines-per-function
 describe('Note Date Component', () => {
   afterEach(() => {
     MockDate.reset();

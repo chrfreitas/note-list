@@ -9,7 +9,6 @@ import NoteIcon from '../note-icon/note-icon';
 import { Container, Title, Subtitle, Infos, Header } from './note-item.styles';
 import { INoteItemProps } from './note-item.interfaces';
 
-// eslint-disable-next-line max-lines-per-function
 const NoteItem = ({
   id,
   type,

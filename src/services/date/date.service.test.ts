@@ -1,7 +1,6 @@
 import MockDate from 'mockdate';
 import DateService from './date.service';
 
-// eslint-disable-next-line max-lines-per-function
 describe('Date Service', () => {
   afterEach(() => {
     MockDate.reset();

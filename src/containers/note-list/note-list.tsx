@@ -3,7 +3,6 @@ import React from 'react';
 import { NoteList as NoteListView } from '../../views/note-list/note-list';
 import { useNotes } from './note-list.hooks';
 
-// eslint-disable-next-line max-lines-per-function
 const NoteList = () => {
   const {
     notes,

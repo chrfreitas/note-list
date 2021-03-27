@@ -8,7 +8,6 @@ describe('Util Capitalize', () => {
   });
 });
 
-// eslint-disable-next-line max-lines-per-function
 describe('Util OrderByDate', () => {
   const array = [
     { date: new Date('2021-02-13') },

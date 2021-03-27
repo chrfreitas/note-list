@@ -38,7 +38,6 @@ const mockNotes = [
   }
 ];
 
-// eslint-disable-next-line max-lines-per-function
 describe('Note List Container', () => {
   beforeEach(() => {
     DataSource.getNotes = () => mockNotes;

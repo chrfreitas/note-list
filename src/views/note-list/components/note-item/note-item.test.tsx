@@ -4,7 +4,6 @@ import React from 'react';
 
 import NoteItem from './note-item';
 
-// eslint-disable-next-line max-lines-per-function
 describe('Note Item Component', () => {
   test('shows locker icon when note status is blocked', () => {
     const note = {
