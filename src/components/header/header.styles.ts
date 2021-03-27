@@ -17,39 +17,33 @@ export const Title = styled.h2`
   font-weight: 700;
 `;
 
-export const AddIcon = styled.div`
+const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border: none;
+  background: white;
+
+  svg {
+    display: block;
+  }
+`;
+
+export const AddIcon = styled(Button)`
   background-color: ${colors.blue};
-  border-radius: 50%;
   border: 1px solid ${colors.blue};
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-
-  svg {
-    display: block;
-  }
 `;
 
-export const SortIcon = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+export const SortIcon = styled(Button)`
   background-color: ${colors.white};
-  border-radius: 50%;
   border: 1px solid ${colors.gray};
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-
-  svg {
-    display: block;
-  }
 `;
 
-export const CloseIcon = styled.div`
+export const CloseIcon = styled(Button)`
   cursor: pointer;
 
   svg {

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { colors } from '../../../../styles/colors';
 
-export const Container = styled.div`
+export const Container = styled.ul`
   display: flex;
   flex-wrap: wrap;
 `;
 
-export const Tag = styled.div`
+export const Tag = styled.li`
   border-radius: 2px;
   padding: 1px 4px;
   margin: 0 4px 4px 0;
